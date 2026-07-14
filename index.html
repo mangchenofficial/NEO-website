@@ -225,9 +225,9 @@ body.dark {
 
         .article-card {
             position: relative;
-            background-color: color-mix(in srgb, var(--md-surface-container-low) 30%, transparent);
-            backdrop-filter: blur(28px) saturate(1.5);
-            -webkit-backdrop-filter: blur(28px) saturate(1.5);
+            background-color: color-mix(in srgb, var(--md-surface-container-low) 16%, transparent);
+            backdrop-filter: blur(22px) saturate(1.4);
+            -webkit-backdrop-filter: blur(22px) saturate(1.4);
             border: none;
             border-radius: var(--radius-md);
             padding: 32px;
@@ -252,9 +252,9 @@ body.dark {
 
         .about-card {
             position: relative;
-            background-color: color-mix(in srgb, var(--md-surface-container-low) 30%, transparent);
-            backdrop-filter: blur(28px) saturate(1.5);
-            -webkit-backdrop-filter: blur(28px) saturate(1.5);
+            background-color: color-mix(in srgb, var(--md-surface-container-low) 16%, transparent);
+            backdrop-filter: blur(22px) saturate(1.4);
+            -webkit-backdrop-filter: blur(22px) saturate(1.4);
             border: none;
             border-radius: var(--radius-md);
             padding: 32px;
@@ -276,9 +276,9 @@ body.dark {
 
         .friend-card {
             position: relative;
-            background-color: color-mix(in srgb, var(--md-surface-container-low) 30%, transparent);
-            backdrop-filter: blur(28px) saturate(1.5);
-            -webkit-backdrop-filter: blur(28px) saturate(1.5);
+            background-color: color-mix(in srgb, var(--md-surface-container-low) 16%, transparent);
+            backdrop-filter: blur(22px) saturate(1.4);
+            -webkit-backdrop-filter: blur(22px) saturate(1.4);
             border: none;
             border-radius: var(--radius-md);
             padding: 24px;
@@ -312,9 +312,9 @@ body.dark {
             border-bottom: none;
             position: sticky;
             top: 0;
-            background-color: color-mix(in srgb, var(--md-surface-container) 35%, transparent);
-            backdrop-filter: blur(32px) saturate(1.6);
-            -webkit-backdrop-filter: blur(32px) saturate(1.6);
+            background-color: color-mix(in srgb, var(--md-surface-container) 20%, transparent);
+            backdrop-filter: blur(26px) saturate(1.5);
+            -webkit-backdrop-filter: blur(26px) saturate(1.5);
             z-index: 100;
             animation: slideUp 0.5s cubic-bezier(0.2, 0, 0, 1) forwards;
             box-shadow: var(--md-elevation-1);
@@ -505,9 +505,9 @@ body.dark {
         }
 
         .article-full {
-            background-color: color-mix(in srgb, var(--md-surface-container-low) 30%, transparent);
-            backdrop-filter: blur(28px) saturate(1.5);
-            -webkit-backdrop-filter: blur(28px) saturate(1.5);
+            background-color: color-mix(in srgb, var(--md-surface-container-low) 16%, transparent);
+            backdrop-filter: blur(22px) saturate(1.4);
+            -webkit-backdrop-filter: blur(22px) saturate(1.4);
             border: none;
             border-radius: var(--radius-md);
             padding: 32px;
@@ -558,6 +558,124 @@ body.dark {
 
         .article-content p {
             margin-bottom: 16px;
+        }
+
+        .article-content h1,
+        .article-content h2,
+        .article-content h3,
+        .article-content h4 {
+            color: var(--md-on-surface);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+        }
+
+        .article-content h1 { font-size: 1.6rem; margin-top: 0; }
+        .article-content h2 { font-size: 1.35rem; }
+        .article-content h3 { font-size: 1.15rem; }
+        .article-content h4 { font-size: 1rem; }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 0 0 16px 0;
+            padding-left: 24px;
+        }
+
+        .article-content li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        .article-content code {
+            font-family: 'JetBrains Mono', 'Cascadia Code', 'Consolas', monospace;
+            background-color: var(--md-surface-container-highest);
+            color: var(--md-on-surface);
+            padding: 2px 6px;
+            border-radius: var(--radius-xs);
+            font-size: 0.875em;
+        }
+
+        .article-content pre {
+            background-color: var(--md-inverse-surface);
+            color: var(--md-inverse-on-surface);
+            padding: 16px 20px;
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            margin: 0 0 16px 0;
+            line-height: 1.6;
+        }
+
+        .article-content pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+            font-size: 0.875em;
+        }
+
+        .article-content blockquote {
+            margin: 0 0 16px 0;
+            padding: 12px 16px;
+            background-color: var(--md-surface-container-high);
+            border-left: 3px solid var(--md-primary);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            color: var(--md-on-surface-variant);
+        }
+
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0 16px 0;
+            font-size: 0.9rem;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .article-content th,
+        .article-content td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--md-outline-variant);
+        }
+
+        .article-content th {
+            background-color: var(--md-surface-container-high);
+            color: var(--md-on-surface);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .article-content td {
+            color: var(--md-on-surface-variant);
+        }
+
+        .article-content tr:last-child td {
+            border-bottom: none;
+        }
+
+        .article-content hr {
+            border: none;
+            border-top: 1px solid var(--md-outline-variant);
+            margin: 32px 0;
+        }
+
+        .article-content a {
+            color: var(--md-primary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .article-content a:hover {
+            color: var(--md-on-primary-container);
+            text-decoration: underline;
+        }
+
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            margin: 8px 0;
         }
 
         .read-more {
@@ -639,9 +757,9 @@ body.dark {
             margin-top: 48px;
             font-size: 0.85rem;
             color: var(--md-on-surface-variant);
-            background-color: color-mix(in srgb, var(--md-surface-container-low) 30%, transparent);
-            backdrop-filter: blur(28px) saturate(1.5);
-            -webkit-backdrop-filter: blur(28px) saturate(1.5);
+            background-color: color-mix(in srgb, var(--md-surface-container-low) 16%, transparent);
+            backdrop-filter: blur(22px) saturate(1.4);
+            -webkit-backdrop-filter: blur(22px) saturate(1.4);
             border-radius: var(--radius-lg) var(--radius-lg) 0 0;
         }
 
@@ -776,9 +894,9 @@ body.dark {
         }
 
         .friend-card {
-            background-color: color-mix(in srgb, var(--md-surface-container-low) 30%, transparent);
-            backdrop-filter: blur(28px) saturate(1.5);
-            -webkit-backdrop-filter: blur(28px) saturate(1.5);
+            background-color: color-mix(in srgb, var(--md-surface-container-low) 16%, transparent);
+            backdrop-filter: blur(22px) saturate(1.4);
+            -webkit-backdrop-filter: blur(22px) saturate(1.4);
             border: none;
             border-radius: var(--radius-md);
             padding: 24px;
@@ -897,8 +1015,7 @@ body.dark {
                         如果你有任何问题或者想交流技术，欢迎通过以下方式联系我：
                     </p>
                     <p class="about-text">
-                        • NeoUI QQ群：<strong>1067851526</strong><br>
-                        • 猎奇系列催更 QQ群：<strong>1078247710</strong><br>
+                        • 6号收容所 QQ群：<strong>1060596374</strong><br>
                         • B站：<a href="https://space.bilibili.com/2009275394" target="_blank" style="color: var(--text-link-hover);">芒辰Official</a>
                     </p>
                 </div>
@@ -959,14 +1076,14 @@ body.dark {
                         <path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 0 1-.373-.906c0-.356.124-.659.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 0 1 .16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373z"/>
                     </svg>
                 </a>
-                <a href="https://qm.qq.com/q/VDzk5C0dwe" target="_blank" rel="noopener noreferrer" title="QQ">
+                <a href="https://qm.qq.com/q/ri36sDzbOw" target="_blank" rel="noopener noreferrer" title="QQ">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12.003 2c-2.265 0-6.29 1.364-6.29 7.325v1.195S3.55 14.96 3.55 17.474c0 .665.17 1.025.281 1.025.114 0 .902-.484 1.748-2.072 0 0-.18 2.197 1.904 3.967 0 0-1.77.495-1.77 1.182 0 .686 4.078.43 6.29.43 2.21 0 6.287.257 6.287-.43 0-.687-1.768-1.182-1.768-1.182 2.085-1.77 1.905-3.967 1.905-3.967.845 1.588 1.634 2.072 1.746 2.072.111 0 .283-.36.283-1.025 0-2.514-2.166-6.954-2.166-6.954V9.325C18.29 3.364 14.268 2 12.003 2z"/>
                     </svg>
                 </a>
             </div>
             <p> 芒辰 · 初中生创作者的个人空间</p>
-            <p style="margin-top: 8px;">NeoUI QQ群: 1067851526 · 猎奇催更群: 1078247710</p>
+            <p style="margin-top: 8px;">6号收容所 QQ群: 1060596374</p>
         </footer>
     </div>
 
@@ -1010,7 +1127,11 @@ body.dark {
             'NeoUI 的诞生：一个初中生的前端探索.md',
             '从零构建我的自研操作系统 NEO OS.md',
             '关于我的视频创作与猎奇系列.md',
-            '平板澎湃3全系统底层应用.md'
+            '平板澎湃3全系统底层应用.md',
+            'NEO OS：一个初中生的自研操作系统.md',
+            'NeoUI：手机上的伪系统.md',
+            'MXOS：浏览器里的桌面伪系统.md',
+            'Funtouch OS 遇上苹果进行曲：一场跨次元的系统对决.md'
         ];
 
         let cachedPosts = null;
@@ -1053,7 +1174,7 @@ body.dark {
                             date: metadata.日期 || '未知日期',
                             category: metadata.分类 || '随笔',
                             tags: metadata.标签 ? metadata.标签.split(',').map(t => t.trim()) : [],
-                            excerpt: content.slice(0, 150).replace(/\n/g, ' ') + (content.length > 150 ? '...' : ''),
+                            excerpt: stripMarkdown(content.slice(0, 200)).slice(0, 120) + (content.length > 200 ? '...' : ''),
                             rawContent: content,
                         });
                     } catch (fileError) {
@@ -1112,6 +1233,25 @@ body.dark {
                 if (m === '>') return '&gt;';
                 return m;
             });
+        }
+
+        function stripMarkdown(md) {
+            if (!md) return '';
+            return md
+                .replace(/^#{1,6}\s+/gm, '')
+                .replace(/\*\*(.+?)\*\*/g, '$1')
+                .replace(/\*(.+?)\*/g, '$1')
+                .replace(/`(.+?)`/g, '$1')
+                .replace(/\[(.+?)\]\(.+?\)/g, '$1')
+                .replace(/^[\s]*[-*+]\s+/gm, '')
+                .replace(/^[\s]*\d+\.\s+/gm, '')
+                .replace(/^>\s+/gm, '')
+                .replace(/!\[.*?\]\(.+?\)/g, '')
+                .replace(/\|/g, ' ')
+                .replace(/^[-:]+\s*$/gm, '')
+                .replace(/\n{2,}/g, '\n')
+                .replace(/\n/g, ' ')
+                .trim();
         }
 
         async function renderHome() {
