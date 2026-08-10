@@ -960,6 +960,25 @@ body.dark {
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        // 重写 marked 图片渲染，自动补全 posts/ 路径前缀
+        (function() {
+            try {
+                const renderer = new marked.Renderer();
+                const originalImage = renderer.image;
+                renderer.image = function({ href, title, text }) {
+                    if (href && !href.startsWith('http') && !href.startsWith('/') && !href.includes('/')) {
+                        href = 'posts/' + href;
+                    }
+                    const titleAttr = title ? ' title="' + title.replace(/"/g, '&quot;') + '"' : '';
+                    return '<img src="' + href + '" alt="' + (text || '') + '"' + titleAttr + ' loading="lazy">';
+                };
+                marked.setOptions({ renderer });
+            } catch (e) {
+                console.warn('marked 渲染器初始化失败:', e);
+            }
+        })();
+    </script>
 </head>
 <body>
     <div class="bg-layer" id="bgLayer"></div>
