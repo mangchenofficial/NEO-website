@@ -1122,7 +1122,7 @@ body.dark {
             history.replaceState(null, '', '#' + pageId);
         }
 
-        const LOCAL_POST_FILES = [
+        const FALLBACK_POST_FILES = [
             'MXOS 1.2.0：一个运行在浏览器中的桌面伪操作系统.md',
             'NeoUI 的诞生：一个初中生的前端探索.md',
             '从零构建我的自研操作系统 NEO OS.md',
@@ -1156,9 +1156,29 @@ body.dark {
             }
 
             try {
+                let fileNames;
+
+                // 优先从 posts.json 动态读取文章列表
+                try {
+                    const listRes = await fetch('posts/posts.json');
+                    if (listRes.ok) {
+                        const json = await listRes.json();
+                        if (Array.isArray(json) && json.length > 0) {
+                            fileNames = json;
+                        } else {
+                            throw new Error('posts.json 格式或内容无效');
+                        }
+                    } else {
+                        throw new Error('posts.json 响应状态异常');
+                    }
+                } catch (fetchErr) {
+                    console.warn('posts.json 加载失败，使用后备列表:', fetchErr.message);
+                    fileNames = FALLBACK_POST_FILES;
+                }
+
                 const posts = [];
 
-                for (let fileName of LOCAL_POST_FILES) {
+                for (let fileName of fileNames) {
                     try {
                         const filePath = 'posts/' + encodeURIComponent(fileName);
                         const contentRes = await fetch(filePath);
